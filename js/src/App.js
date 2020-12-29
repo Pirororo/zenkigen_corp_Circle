@@ -4,9 +4,7 @@ export class App{
     constructor(sceneInstance){
       this._update = this._update.bind(this);
       this._onResize = this._onResize.bind(this);
-
       this.frame = 0;
-      this.sceneNUM = 0;
 
       // シーン
       this._scene = sceneInstance;
@@ -35,9 +33,6 @@ export class App{
       this._scene.update();
       requestAnimationFrame(this._update);
       this._renderer.render(this._scene, this._scene.camera);
-
-      this._scene.camera = this._scene._orthoCamera;
-
     }
 
     _onResize() {
